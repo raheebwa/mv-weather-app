@@ -10,37 +10,48 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body>
-    <div class="row">
-      <div class="col">
-        <div class="weather-card top mr-auto ml-auto">
-          <div class="top">
-            <div class="wrapper">
-              <h1 class="heading">Welcome</h1>
-              <h3 class="location">Kampala, Uganda</h3>
-              <p class="temp">
-                <span class="temp-value">20</span>
-                <span class="deg">0</span>
-                <a href="javascript:;"><span class="temp-type">C</span></a>
-              </p>
+  <body class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="weather-card top mr-auto ml-auto">
+            <div id="form-container">
+              <form class="form-inline my-2 mr-auto ml-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
             </div>
-          </div>
-          <div class="bottom">
-            <div class="wrapper">
-              <ul class="forecast">
-                <li class="active">
-                  <span class="date">Yesterday</span>
-                  <span class="lnr lnr-sun condition">
-                    <span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>
-                  </span>
-                </li>
-                <li>
-                  <span class="date">Tomorrow</span>
-                  <span class="lnr lnr-cloud condition mr-auto">
-                    <span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>
-                  </span>
-                </li>
-              </ul>
+            <div class="top">
+              <div class="wrapper">
+                <h1 class="heading">Welcome</h1>
+                <h3 class="location">Kampala, Uganda</h3>
+                <p class="temp">
+                  <span class="temp-value">20</span>
+                  <span class="deg">0</span>
+                  <a href="javascript:;"><span class="temp-type">C</span></a>
+                  <br>
+                  
+                </p>
+                
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="wrapper">
+                <ul class="forecast">
+                  <li class="active">
+                    <span class="date">Yesterday</span>
+                    <span class="lnr lnr-sun condition">
+                      <span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="date">Tomorrow</span>
+                    <span class="lnr lnr-cloud condition mr-auto">
+                      <span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
