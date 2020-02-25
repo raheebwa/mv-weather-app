@@ -37,9 +37,9 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Aheebwa Ramadhan**
 
-- Github: [@githubhandle](https://github.com/raheebwa)
-- Twitter: [@twitterhandle](https://twitter.com/raheebwa)
-- Linkedin: [linkedin](https://linkedin.com/aheebwaramadhan)
+- Github: [@raheebwa](https://github.com/raheebwa)
+- Twitter: [@raheebwa](https://twitter.com/raheebwa)
+- raheebwa: [raheebwa](https://raheebwa.com/aheebwaramadhan)
 
 
 ## 🤝 Contributing
