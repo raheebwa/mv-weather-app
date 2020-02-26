@@ -8,7 +8,7 @@ const dataExtractor = {
       name: myCity.name,
       condition: myCity.weather[0].main,
       desc: myCity.weather[0].description,
-      temp: myCity.main.temp,
+      temp: Math.floor(myCity.main.temp),
       pressure: myCity.main.pressure,
       humidity: myCity.main.humidity,
       visibility: myCity.visibility,
