@@ -10,15 +10,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body class="py-5">
+  <body>
+    <nav class="navbar navbar-dark bg-success mb-5">
+      <a class="navbar-brand mr-auto mx-auto" href="#">Ramar's Weather Forecast App</a>
+    </nav>
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="weather-card top mr-auto ml-auto">
-            <div id="form-container">
-              <form class="form-inline my-2 mr-auto ml-auto">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <div class="weather-card top mr-auto ml-auto bg-dark">
+            <div id="form-container" class="bg-dark py-4">
+                <form class="mx-3">
+                <input class="form-control mb-2 rounded-0" type="search" placeholder="Search City" aria-label="Search">
+                <button class="btn btn-outline-success btn-block rounded-0" type="submit">Search</button>
               </form>
             </div>
             <div class="top">
@@ -26,31 +29,17 @@
                 <h1 class="heading">Welcome</h1>
                 <h3 class="location">Kampala, Uganda</h3>
                 <p class="temp">
+                  <span class="temp-value lnr lnr-sun condition"></span><br>
                   <span class="temp-value">20</span>
                   <span class="deg">0</span>
                   <a href="javascript:;"><span class="temp-type">C</span></a>
-                  <br>
-                  
                 </p>
                 
               </div>
             </div>
-            <div class="bottom">
+            <div class="bottom bg-dark">
               <div class="wrapper">
-                <ul class="forecast">
-                  <li class="active">
-                    <span class="date">Yesterday</span>
-                    <span class="lnr lnr-sun condition">
-                      <span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>
-                    </span>
-                  </li>
-                  <li>
-                    <span class="date">Tomorrow</span>
-                    <span class="lnr lnr-cloud condition mr-auto">
-                      <span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>
-                    </span>
-                  </li>
-                </ul>
+                <button class="btn btn-outline-warning btn-block my-3 rounded-0">Toggle Farreneight</button>
               </div>
             </div>
           </div>
