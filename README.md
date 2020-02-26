@@ -1,5 +1,5 @@
 # Weather App
-A Todolist Application that uses localstorage to store data in between sessions.
+A weather App that pulls data using a promises from an external api
 
 ![screenshot](./app_screenshot.png)
 
