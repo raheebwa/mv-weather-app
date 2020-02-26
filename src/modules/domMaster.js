@@ -3,11 +3,11 @@ import dataExtractor from './apiClient/dataExtractor';
 import utilities from './utilities';
 
 const changeToFahren = (celcius) => ((celcius * 9) / 5) + 32;
-const changeToCel = (fahren) => ((fahren - 32) * 5) / 9;
-
+// const changeToCel = (fahren) => ((fahren - 32) * 5) / 9;
 
 const domMaster = {
-  renderForecast(data = dataExtractor.cleanedCityData()) {
+  async renderForecast(city = 'Kampala') {
+    const data = await dataExtractor.cleanedCityData(city);
     const myHeading = utilities.createEl('h1', ['heading']);
     myHeading.innerText = data.condition;
     const desc = utilities.createEl('small', ['font-italic']);
@@ -17,7 +17,7 @@ const domMaster = {
     myHeading.appendChild(desc);
 
     const locn = utilities.createEl('h3', ['location']);
-    locn.innerText = data.name;
+    locn.innerText = `${data.name} / ${data.country}`;
 
     const temp = utilities.createEl('p', ['temp']);
     const tempValue = utilities.createEl('span', ['temp-value']);
@@ -48,32 +48,39 @@ const domMaster = {
     weatherCard.classList.add('top');
     weatherCard.appendChild(wrapper);
 
-    return weatherCard;
-  },
-
-  toggleMetric() {
-    const toggleBtn = utilities.getEl('toggle-deg');
-    const tempType = utilities.getEl('the-temp-type');
-    const theTempValue = utilities.getEl('the-temp-value');
+    const theTempValue = await utilities.getEl('the-temp-value');
     const isCel = toggleBtn.getAttribute('isCel');
 
     const MyTempValue = theTempValue.innerText;
 
-    toggleBtn.addEventListener('click', (e) => {
-      e.preventDefault();
+    toggleBtn.addEventListener('click', () => {
       if (Number(isCel) === 1) {
         const fahrenValue = changeToFahren(Number(MyTempValue));
         theTempValue.innerText = String(fahrenValue);
         toggleBtn.innerText = 'Change to Celsius';
         toggleBtn.setAttribute('isCel', 0);
         tempType.innerText = 'F';
-      } else {
+      } else if (Number(isCel) === 0) {
         theTempValue.innerText = theTempValue;
         toggleBtn.innerText = 'Change to Fahrenheit';
         toggleBtn.setAttribute('isCel', 1);
         tempType.innerText = 'C';
       }
     });
+
+    const weatherBg = weatherCard.parentElement;
+    if (String(data.condition) === 'Rain') {
+      weatherBg.classList.remove('cloudy');
+      weatherBg.classList.add('rain');
+    } else if (String(data.condition) === 'Clouds') {
+      weatherBg.classList.remove('rain');
+      weatherBg.classList.add('cloudy');
+    } else {
+      weatherBg.classList.remove('rain');
+      weatherBg.classList.remove('cloudy');
+    }
+
+    return weatherCard;
   },
 };
 
