@@ -63,9 +63,9 @@ const domMaster = {
         theTempValue.innerText = String(fahrenValue);
         toggleBtn1.setAttribute('isCel', 0);
         tempType.innerText = 'F';
-      } 
+      }
     });
-;
+
 
     toggleBtn2.addEventListener('click', () => {
       if (Number(isCel2) === 0) {
