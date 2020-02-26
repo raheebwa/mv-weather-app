@@ -33,8 +33,11 @@ const domMaster = {
     tempType.setAttribute('id', 'the-temp-type');
     tempType.innerText = 'C';
 
-    const toggleBtn = utilities.getEl('toggle-deg');
-    toggleBtn.setAttribute('isCel', 1);
+    const toggleBtn1 = utilities.getEl('toggle-deg');
+    toggleBtn1.setAttribute('isCel', 1);
+
+    const toggleBtn2 = utilities.getEl('toggle-deg-1');
+    toggleBtn2.setAttribute('isCel', 0);
 
     myA.appendChild(tempType);
     temp.appendChild(myA);
@@ -49,21 +52,24 @@ const domMaster = {
     weatherCard.appendChild(wrapper);
 
     const theTempValue = await utilities.getEl('the-temp-value');
-    const isCel = toggleBtn.getAttribute('isCel');
+    const isCel1 = toggleBtn1.getAttribute('isCel');
+    const isCel2 = toggleBtn2.getAttribute('isCel');
 
     const MyTempValue = theTempValue.innerText;
 
-    toggleBtn.addEventListener('click', () => {
-      if (Number(isCel) === 1) {
+    toggleBtn1.addEventListener('click', () => {
+      if (Number(isCel1) === 1) {
         const fahrenValue = changeToFahren(Number(MyTempValue));
         theTempValue.innerText = String(fahrenValue);
-        toggleBtn.innerText = 'Change to Celsius';
-        toggleBtn.setAttribute('isCel', 0);
+        toggleBtn1.setAttribute('isCel', 0);
         tempType.innerText = 'F';
-      } else if (Number(isCel) === 0) {
-        theTempValue.innerText = theTempValue;
-        toggleBtn.innerText = 'Change to Fahrenheit';
-        toggleBtn.setAttribute('isCel', 1);
+      } 
+    });
+;
+
+    toggleBtn2.addEventListener('click', () => {
+      if (Number(isCel2) === 0) {
+        theTempValue.innerText = data.temp;
         tempType.innerText = 'C';
       }
     });
