@@ -17,18 +17,19 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="weather-card top mr-auto ml-auto bg-dark">
+          <div id="the-weather-card" class="weather-card top mr-auto ml-auto bg-dark">
             <div id="form-container" class="bg-dark py-4">
-                <form class="mx-3">
-                <input class="form-control mb-2 rounded-0" type="search" placeholder="Search City" aria-label="Search">
+              <form id="search-form" class="mx-3">
+                <input class="form-control mb-2 rounded-0" type="search" id="search-city" placeholder="Search City" aria-label="Search">
                 <button class="btn btn-outline-success btn-block rounded-0" type="submit">Search</button>
               </form>
             </div>
             <div id="weather-data">
             </div>
             <div class="bottom bg-dark">
-              <div class="wrapper">
-                <a id="toggle-deg" href="#" class="btn btn-outline-warning btn-block my-3 rounded-0">Change to Fahrenheit</a>
+              <div class="wrapper text-center">
+                <a id="toggle-deg" href="#" class="btn btn-outline-warning my-3 rounded-0">Fahrenheit</a>
+                <a id="toggle-deg-1" href="#" class="btn btn-outline-info my-3 rounded-0">Celsius</a>
               </div>
             </div>
           </div>
