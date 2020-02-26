@@ -2,6 +2,9 @@
 import dataExtractor from './apiClient/dataExtractor';
 import utilities from './utilities';
 
+const changeToFahren = (celcius) => ((celcius * 9) / 5) + 32;
+const changeToCel = (fahren) => ((fahren - 32) * 5) / 9;
+
 
 const domMaster = {
   renderForecast(data = dataExtractor.cleanedCityData()) {
@@ -18,6 +21,7 @@ const domMaster = {
 
     const temp = utilities.createEl('p', ['temp']);
     const tempValue = utilities.createEl('span', ['temp-value']);
+    tempValue.setAttribute('id', 'the-temp-value');
     tempValue.innerText = data.temp;
     temp.appendChild(tempValue);
     const degValue = utilities.createEl('span', ['deg']);
@@ -26,11 +30,12 @@ const domMaster = {
     const myA = utilities.createEl('a');
     myA.setAttribute('href', '#');
     const tempType = utilities.createEl('span', ['temp-type']);
-    if (1 === 1) {
-      tempType.innerText = 'C';
-    } else {
-      tempType.innerText = 'F';
-    }
+    tempType.setAttribute('id', 'the-temp-type');
+    tempType.innerText = 'C';
+
+    const toggleBtn = utilities.getEl('toggle-deg');
+    toggleBtn.setAttribute('isCel', 1);
+
     myA.appendChild(tempType);
     temp.appendChild(myA);
 
@@ -44,6 +49,31 @@ const domMaster = {
     weatherCard.appendChild(wrapper);
 
     return weatherCard;
+  },
+
+  toggleMetric() {
+    const toggleBtn = utilities.getEl('toggle-deg');
+    const tempType = utilities.getEl('the-temp-type');
+    const theTempValue = utilities.getEl('the-temp-value');
+    const isCel = toggleBtn.getAttribute('isCel');
+
+    const MyTempValue = theTempValue.innerText;
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (Number(isCel) === 1) {
+        const fahrenValue = changeToFahren(Number(MyTempValue));
+        theTempValue.innerText = String(fahrenValue);
+        toggleBtn.innerText = 'Change to Celsius';
+        toggleBtn.setAttribute('isCel', 0);
+        tempType.innerText = 'F';
+      } else {
+        theTempValue.innerText = theTempValue;
+        toggleBtn.innerText = 'Change to Fahrenheit';
+        toggleBtn.setAttribute('isCel', 1);
+        tempType.innerText = 'C';
+      }
+    });
   },
 };
 
