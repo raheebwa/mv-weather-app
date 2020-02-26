@@ -1,6 +1,6 @@
 
 const apiConsumer = {
-  findByCity() {
+  returnCityData() {
     const sampleData = [
       {
         coord: {
@@ -48,6 +48,5 @@ const apiConsumer = {
   },
 };
 
-console.log(apiConsumer.findByCity());
 
-// export default apiConsumer;
+export default apiConsumer;
