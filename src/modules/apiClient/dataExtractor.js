@@ -12,6 +12,7 @@ const dataExtractor = {
       pressure: myCity.main.pressure,
       humidity: myCity.main.humidity,
       visibility: myCity.visibility,
+      icon: `http://openweathermap.org/img/wn/${myCity.weather[0].icon}@2x.png`,
     };
 
     return result;

@@ -8,16 +8,20 @@ const changeToFahren = (celcius) => ((celcius * 9) / 5) + 32;
 const domMaster = {
   async renderForecast(city = 'Kampala') {
     const data = await dataExtractor.cleanedCityData(city);
+    const icon = utilities.createEl('img', ['img-rounded']);
+    icon.setAttribute('src', data.icon);
     const myHeading = utilities.createEl('h1', ['heading']);
     myHeading.innerText = data.condition;
     const desc = utilities.createEl('small', ['font-italic']);
     desc.innerText = data.desc;
     const lineBr = utilities.createEl('br');
+    myHeading.appendChild(icon);
     myHeading.appendChild(lineBr);
     myHeading.appendChild(desc);
 
     const locn = utilities.createEl('h3', ['location']);
     locn.innerText = `${data.name} / ${data.country}`;
+
 
     const temp = utilities.createEl('p', ['temp']);
     const tempValue = utilities.createEl('span', ['temp-value']);
