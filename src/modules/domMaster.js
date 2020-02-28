@@ -2,7 +2,7 @@
 import dataExtractor from './apiClient/dataExtractor';
 import utilities from './utilities';
 
-const changeToFahren = (celcius) => ((celcius * 9) / 5) + 32;
+const changeToFahren = (celcius) => (((celcius * 9) / 5) + 32).toPrecision(3);
 // const changeToCel = (fahren) => ((fahren - 32) * 5) / 9;
 
 const domMaster = {
