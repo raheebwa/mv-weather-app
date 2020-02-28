@@ -1,7 +1,7 @@
-import domMaster from './modules/domMaster';
+import renderForecast from './modules/domMaster';
 import utilities from './modules/utilities';
 
-domMaster.renderForecast();
+renderForecast();
 
 const searchForm = utilities.getEl('search-form');
 
@@ -9,5 +9,5 @@ searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   utilities.getEl('weather-data').innerHTML = '';
   const city = utilities.getEl('search-city');
-  domMaster.renderForecast(city.value);
+  renderForecast(city.value);
 });
