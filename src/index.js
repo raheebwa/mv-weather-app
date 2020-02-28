@@ -5,7 +5,8 @@ domMaster.renderForecast();
 
 const searchForm = utilities.getEl('search-form');
 
-searchForm.addEventListener('submit', () => {
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
   utilities.getEl('weather-data').innerHTML = '';
   const city = utilities.getEl('search-city');
   domMaster.renderForecast(city.value);
