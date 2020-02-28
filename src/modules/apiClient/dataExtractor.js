@@ -8,7 +8,7 @@ const dataExtractor = {
       country: myCity.sys.country,
       condition: myCity.weather[0].main,
       desc: myCity.weather[0].description,
-      temp: Math.floor(myCity.main.temp - 273.15),
+      temp: myCity.main.temp.toPrecision(3),
       pressure: myCity.main.pressure,
       humidity: myCity.main.humidity,
       visibility: myCity.visibility,
