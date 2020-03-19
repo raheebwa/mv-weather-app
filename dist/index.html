@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Weather App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-success mb-5">
+      <a class="navbar-brand mr-auto mx-auto" href="#">Ramar's Weather Forecast App</a>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="the-weather-card" class="weather-card top mr-auto ml-auto bg-dark">
+            <div id="form-container" class="bg-dark py-4">
+              <form id="search-form" class="mx-3">
+                <input class="form-control mb-2 rounded-0" type="search" id="search-city" placeholder="Search City" aria-label="Search">
+                <button class="btn btn-outline-success btn-block rounded-0" type="submit">Search</button>
+              </form>
+            </div>
+            <div id="weather-data">
+            </div>
+            <div class="bottom bg-dark">
+              <div class="wrapper text-center">
+                <a id="toggle-deg" href="#" class="btn btn-outline-warning my-3 rounded-0">Fahrenheit</a>
+                <a id="toggle-deg-1" href="#" class="btn btn-outline-info my-3 rounded-0">Celsius</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
